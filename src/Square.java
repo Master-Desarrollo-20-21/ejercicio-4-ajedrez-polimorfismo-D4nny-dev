@@ -4,7 +4,7 @@ import java.util.Map;
 class Square extends Coordinate {
 	
 	public static final String ranks = "abcdefgh";
-    public static final String files = "12345678";
+	public static final String files = "12345678";
 
 	private Map<Coordinate,Piece> board = new HashMap<Coordinate,Piece>();
 	
