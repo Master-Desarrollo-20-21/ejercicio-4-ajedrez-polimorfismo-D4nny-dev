@@ -1,0 +1,62 @@
+@startuml Chess
+
+	class Chess
+	class Turn
+	class Player
+	class Board
+	class Color
+	class White
+	class Black
+	class Piece
+	
+    note as Pieces
+    *See <b>chess_pieces.puml</b> for 
+    know more about Pices
+    end note
+    
+	Chess *--> Turn
+	Chess *--> Board
+	Chess *-- Result
+	
+	Result --> Player
+	
+	Player *--> Goal
+    
+    CheckMate -up-|> Goal
+    CheckMate ..> King
+    
+	Board *--> "8*8" Square
+	Board o--> "32" Piece
+	Square *--> Coordinate
+
+	Coordinate *--> Letter
+	Coordinate *-->Number
+
+	Turn *--> "2" Player
+
+	Player *--> Color
+	Player o-->"16" Piece
+	Player ..> "n" Move
+
+	Color <|-- White
+	Color <|-- Black
+
+	Piece *--> Move
+	Piece *--> Coordinate
+	Piece <|-- King
+
+	Move *-- Coordinate
+	Move *-- Rule
+
+	Rule <|-- Direction
+	Rule <|-- Kill
+
+	Direction <|-- Horizontal
+	Direction <|-- Vertical
+	Direction <|-- Diagonal
+	Direction <|-- KnightJump
+	Direction <|-- Forward
+	Direction <|-- Backward
+    Direction <|-- ReverseDiagonal
+
+@enduml

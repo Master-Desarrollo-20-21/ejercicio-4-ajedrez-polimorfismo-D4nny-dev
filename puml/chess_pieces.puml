@@ -1,0 +1,21 @@
+@startuml Chess
+
+	class Player
+    class Piece
+
+	Player o-->"16" Piece
+	Player *-- King
+	Player *-- Queen
+	Player *-- "2" Bishop
+	Player *-- "2" Knight
+	Player *-- "2" Rook
+	Player *-- "8" Pawn
+
+	Piece <|-- Pawn
+	Piece <|-- Bishop
+	Piece <|-- Knight
+	Piece <|-- Rook
+	Piece <|-- Queen
+	Piece <|-- King
+
+@enduml
